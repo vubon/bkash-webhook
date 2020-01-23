@@ -1,4 +1,4 @@
-sign_able_keys = [
+BkASH_WEBHOOK_KEYS = [
     'Message',
     'MessageId',
     'Subject',

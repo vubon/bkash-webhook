@@ -6,6 +6,8 @@ Methods:
     - signature validation
     -
 """
+import logging
+
 import requests
 
 from OpenSSL.crypto import verify, load_certificate, FILETYPE_PEM
@@ -13,9 +15,10 @@ from django.utils.encoding import force_bytes
 
 from bkash_webhook import exceptions
 from bkash_webhook.validations import *
-from applibs.error_codes import ERROR_CODE
+from bkash_webhook.error_codes import ERROR_CODE
 from bkash_webhook.commons import decode_base64
-from applibs.loggers import log_exception, log_info
+
+logger = logging.getLogger("bkash")
 
 
 class BKash:
@@ -35,11 +38,11 @@ class BKash:
         try:
             response = requests.get(cert_url)
             if 400 <= response.status_code <= 499:
-                log_info().info(f"bKash throw bad request response {response.text}")
-                raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
+                logger.info(f"bKash throw bad request response {response.text}")
+                raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR, response.status_code)
             return response.text
         except Exception as err:
-            log_exception().error(f"bKash cert url error {err}")
+            logger.error(f"bKash cert url error {err}")
             raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
 
     def __content(self) -> str:
@@ -80,11 +83,11 @@ class BKash:
         try:
             response = requests.get(self.body.get("SubscribeURL"))
             if 400 <= response.status_code <= 499:
-                log_info().info(f"bKash throw bad request response {response.text}")
-                raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
-            log_info().info(f"Subscribe response {response.text}")
+                logger.info(f"bKash throw bad request response {response.text}")
+                raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR, response.status_code)
+            logger.info(f"Subscribe response {response.text}")
         except requests.HTTPError as err:
-            log_exception().error(f"bKash cert url error {err}")
+            logger.error(f"bKash cert url error {err}")
             raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
 
     @type_validation("Type")
@@ -96,7 +99,7 @@ class BKash:
         try:
             self.__openssl_verification()
         except Exception as err:
-            log_exception().error(f"OpenSSL error {err}")
+            logger.error(f"OpenSSL error {err}")
             raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
 
         if self.body.get("Type") == "SubscriptionConfirmation":
@@ -104,4 +107,4 @@ class BKash:
         elif self.body.get("Type") == "Notification":
             return self.body
         else:
-            log_info().info("bKash does not send correct notification type")
+            logger.info("bKash does not send correct notification type")

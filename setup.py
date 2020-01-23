@@ -14,11 +14,9 @@ setup(
     author_email='vubon.roy@gmail.com',
     url='https://github.com/vubon/bkash-webhook',
     license='MIT',
-    platforms='Django',
+    platforms='Python',
     install_requires=[
-        'Django',
         'requests',
         'pyOpenSSL',
-        'djangorestframework',
     ]
 )
