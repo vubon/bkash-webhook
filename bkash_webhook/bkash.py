@@ -11,12 +11,12 @@ import logging
 import requests
 
 from OpenSSL.crypto import verify, load_certificate, FILETYPE_PEM
-from django.utils.encoding import force_bytes
 
+from bkash_webhook.settings import BKASH_SIGN_ABLE_KEYS
 from bkash_webhook import exceptions
 from bkash_webhook.validations import *
 from bkash_webhook.error_codes import ERROR_CODE
-from bkash_webhook.commons import decode_base64
+from bkash_webhook.commons import decode_base64, force_bytes
 
 logger = logging.getLogger("bkash")
 
@@ -45,12 +45,12 @@ class BKash:
             logger.error(f"bKash cert url error {err}")
             raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
 
-    def __content(self) -> str:
+    def __content(self) -> bytes:
         """
         :return:
         """
 
-        sign_able_keys = [
+        default_sign_able_keys = [
             'Message',
             'MessageId',
             'Subject',
@@ -61,7 +61,7 @@ class BKash:
             'Type'
         ]
         string_data = ""
-        for key in sign_able_keys:
+        for key in BKASH_SIGN_ABLE_KEYS or default_sign_able_keys:
             if key in self.body.keys():
                 string_data += f"{key}\n{self.body[key]}\n"
         return force_bytes(string_data)

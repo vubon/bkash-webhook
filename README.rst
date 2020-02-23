@@ -1,29 +1,19 @@
-=====
+===========================
 bKash Webhook
-=====
+===========================
 
-Polls is a Django app to conduct Web-based polls. For each question,
-visitors can choose between a fixed number of answers.
-
-Detailed documentation is in the "docs" directory.
+bKash Web hook will help to get instance notification from bKash merchant account.
 
 Quick start
 -----------
 
-1. Add "bkash_webhook" to your INSTALLED_APPS setting like this::
+1. Install bkash_webhook from PyPy::
 
-    INSTALLED_APPS = [
-        ...
-        'bkash_webhook',
-    ]
+    pip install bkash_webhook
 
 2. Include the polls URLconf in your project urls.py like this::
 
-    path('polls/', include('polls.urls')),
+    from bkash_webhook import BKash
+    bkash_payload = {}
+    bkash = Bkash(bkash_payload)
 
-3. Run `python manage.py migrate` to create the polls models.
-
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.

@@ -1,10 +1,1 @@
-BkASH_WEBHOOK_KEYS = [
-    'Message',
-    'MessageId',
-    'Subject',
-    'SubscribeURL',
-    'Timestamp',
-    'Token',
-    'TopicArn',
-    'Type'
-]
+BKASH_SIGN_ABLE_KEYS = []

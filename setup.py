@@ -10,6 +10,7 @@ setup(
     packages=['bkash_webhook'],
     description='This package will help to receive bKash Webhook payment payload',
     long_description=README,
+    long_description_content_type='text/x-rst',
     author='Vubon Roy',
     author_email='vubon.roy@gmail.com',
     url='https://github.com/vubon/bkash-webhook',
