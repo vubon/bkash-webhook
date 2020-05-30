@@ -9,10 +9,8 @@ Methods:
 import logging
 
 import requests
-
 from OpenSSL.crypto import verify, load_certificate, FILETYPE_PEM
 
-from bkash_webhook.settings import BKASH_SIGN_ABLE_KEYS
 from bkash_webhook import exceptions
 from bkash_webhook.validations import *
 from bkash_webhook.error_codes import ERROR_CODE
@@ -62,7 +60,7 @@ class BKash:
             'Type'
         ]
         string_data = ""
-        for key in BKASH_SIGN_ABLE_KEYS or default_sign_able_keys:
+        for key in default_sign_able_keys:
             if key in self.body.keys():
                 string_data += f"{key}\n{self.body[key]}\n"
         return force_bytes(string_data)
