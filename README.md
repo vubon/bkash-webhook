@@ -18,7 +18,6 @@ pip install bKashWebhook
 bKashWebhook package does not provide any kind of security. But payload content security handle by **bKash** <br/>
 N.B. You need to secure your API endpoint yourself. 
 ## Example 
-#### Timestamp or datetime object
 ```python
 import json
 from bkash_webhook import BKash
