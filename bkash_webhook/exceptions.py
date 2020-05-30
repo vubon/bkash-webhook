@@ -10,13 +10,3 @@ class CustomException(Exception):
 class ValidationError(CustomException):
     default_status_code = 400
     default_message = {"message": "Unknown validation error", "error_code": "UVE400"}
-
-
-class DataNotFound(CustomException):
-    default_status_code = 404
-    default_message = {"message": "Data not found", "error_code": "DNF404"}
-
-
-class ServiceUnavailable(CustomException):
-    default_status_code = 503
-    default_message = {"message": "Service Unavailable", "error_code": "SU503"}

@@ -18,6 +18,7 @@ from urllib.parse import urlparse
 from bkash_webhook import exceptions
 from bkash_webhook.error_codes import ERROR_CODE
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("bkash_validation")
 
 __all__ = [
@@ -50,9 +51,13 @@ def url_validation(argument):
         def wrapper(*args, **kwargs):
             parse = host_validation(url=args[0].body.get(argument))
             if "SigningCertURL" == argument:
-                path, pem = parse.path.split(".")
-                if pem != "pem":
-                    logger.info(f"bkash cert url error {path} or pem {pem}")
+                try:
+                    path, pem = parse.path.split(".")
+                    if pem != "pem":
+                        logger.info(f"bkash cert url error {path} or pem {pem}")
+                        raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
+                except ValueError as err:
+                    logger.info(f"bkash SigningCertURL error {err}")
                     raise exceptions.ValidationError(ERROR_CODE.global_codes.VALUE_ERROR)
             return func(*args, **kwargs)
 

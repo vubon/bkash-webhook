@@ -1,0 +1,12 @@
+{
+"Type" : "SubscriptionConfirmation",
+"MessageId" : "165545c9-2a5c-472c-8df2-7ff2be2b3b1b",
+"Token" : "2336412f37fb687f5d51e6e241d09c805a5a57b30d712f794cc5f6a988666d92768dd60a747ba6f3beb71854e285d6ad02428b09ceece29417f1f02d609c582afbacc99c583a916b9981dd2728f4ae6fdb82efd087cc3b7849e05798d2d2785c03b0879594eeac82c01f235d0e717736",
+"TopicArn" : "arn:aws:sns:us-west-2:123456789012:MyTopic",
+"Message" : "You have chosen to subscribe to the topic arn:aws:sns:us-west-2:123456789012:MyTopic.\nTo confirm the subscription, visit the SubscribeURL included in this message.",
+"SubscribeURL" : "http://localhost:8000",
+"Timestamp" : "2012-04-26T20:45:04.751Z",
+"SignatureVersion" : "1",
+"Signature" : "Jq7y2NxHzdXeedtUzlSpuPg+fx+Rfr621GSydAcA9av6nNQ/bkL0wW9ra2S13/icZN3/YSYbt0tgPXNH82vak7u41gHgMAx5C7RjoazFoB7arHTCh9jbsiVs36sa05qL5za9lE08XrPpf8ps03/u9byJ00Btk5KScrmF87J20PoWyjY+GCJzpzyrz2rTsSFMf2cumJ7biaUo+0tvSMKANqgSPDDazABJw9E3n9rQS2fJD62sAF+IJCec9aghxmQqenScxWK+iLdSea8a65x9BQjevoj6CTLZzguKexzRub9VD0LPgpmrRLUdJN7YYVWJ21kU7XGRLCo0PFqmlRcKHQ==",
+"SigningCertURL" : "http://localhost:8000/SimpleNotificationService-9b8b327a734e4b5db66e525c2ac6ac6f.pem"
+}

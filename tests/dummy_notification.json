@@ -1,0 +1,11 @@
+{
+  "Type": "Notification",
+  "Message": "{'trxID': '7EG6OA53IG', 'amount': '2.0', 'currency': 'BDT', 'dateTime': '20200516203233', 'debitMSISDN': '0173xxxxxxxx', 'creditShortCode': '017xxxxxxxx', 'transactionType': '10002529', 'transactionStatus': 'Completed', 'transactionReference': '11002203', 'creditOrganizationName': 'Organization Name'}",
+  "MessageId" : "20d48143-6af4-571d-b7cb-d211e6a2ac69",
+  "TopicArn" : "arn:aws:sns:ap-southeast-1:354285753755:bpt_01823072645",
+  "Timestamp": "2020-05-16T14:32:33.133Z",
+  "SignatureVersion" : "1",
+  "Signature" : "IoKkR5HBUmv0vvCNs/v369NOOB+D7HlyNvlHAg35q0LFDiPTF7AGmzTfK4NOEjvJuEM+4jShcRk8V75/zdUSWP8JKl43mVbJWkOK8mmvOCuazv8uhHWQNnE2k9c+6OBBQNGMg/WgLeg/2+fuZy4nTNX8Ijnoc4rg4SbPWS+tsPdwWdnJAZNxCbyixiPLAbLADVDiQEr2Dk7KSdJ51DKauxM72O7brW0fz2v6R4YwFBdxepv8cF+gJuQFJUTEChAgnJ9G+Najvy4KZR3Y6//dLFt+qBicmON3+bNKV0KOKbkdZR7B5KJpHwnRJ4HdJrYxpwS1X5OY7avURwh3ZvJ+vw==",
+  "SigningCertURL" : "http://localhost:8000/SimpleNotificationService-0d3805b6d188487ea00966f991ca85ec.pem",
+  "UnsubscribeURL" : "https://sns.ap-southeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-southeast-1:354285753755:bpt_01823072645:ddc1093b-2885-4179-ae8f-961577b564bd"
+}

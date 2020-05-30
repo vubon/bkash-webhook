@@ -8,15 +8,13 @@ class GlobalErrorCodes(object):
     Codes can be used to check for specific validation errors
     """
     KEY_ERROR = dict(error_code="KE400", message="Key error")
-    ALL_FIELDS_REQUIRED = dict(error_code="AFR400", message='All fields are required')
     VALUE_ERROR = dict(error_code="VE400", message="Value error")
-    INVALID_REQUEST = dict(error_code="IR400", message="Invalid request")
 
 
 class ErrorCodes(object):
 
     def __init__(self):
-        self.global_error = GlobalErrorCodes()
+        self.global_codes = GlobalErrorCodes()
 
 
 # Instance

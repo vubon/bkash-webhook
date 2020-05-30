@@ -1,0 +1,14 @@
+[run]
+source = .
+branch = False
+timid = True
+omit = venv/*
+[report]
+show_missing = True
+include = *.py
+omit =
+    setup.py
+    bkash_webhook/__version__.py
+    */site-packages/*
+[html]
+title = Code Coverage
