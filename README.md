@@ -1,5 +1,6 @@
 # bKash Webhook
 ![Coverage](https://raw.githubusercontent.com/vubon/bkash-webhook/master/docs/coverage.svg)
+[![GitHub version](https://badge.fury.io/gh/vubon%2Fbkash-webhook.svg)](https://badge.fury.io/gh/vubon%2Fbkash-webhook)
 
 ## Introduction
 This package will help to receive Webhook notification from bKash end and the user can use this package of any kind of Python Web Frameworks 
