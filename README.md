@@ -1,4 +1,5 @@
 # bKash Webhook
+[![PyPI version](https://badge.fury.io/py/bKashWebhook.svg)](https://badge.fury.io/py/bKashWebhook)
 ![Coverage](https://raw.githubusercontent.com/vubon/bkash-webhook/master/docs/coverage.svg)
 [![GitHub version](https://badge.fury.io/gh/vubon%2Fbkash-webhook.svg)](https://badge.fury.io/gh/vubon%2Fbkash-webhook)
 

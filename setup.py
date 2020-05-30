@@ -27,6 +27,9 @@ setup(
     author_email='vubon.roy@gmail.com',
     description='This package will help to receive bKash Webhook payment payload',
     url='https://github.com/vubon/bkash-webhook',
+    project_urls={
+        "Documentation": "https://github.com/vubon/bkash-webhook/blob/master/docs/GUIDE.md"
+    },
     packages=find_packages(),
     long_description=get_log_description(),
     long_description_content_type="text/markdown",
