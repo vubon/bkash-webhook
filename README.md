@@ -24,8 +24,8 @@ N.B. You need to secure your API endpoint yourself.
 ## Example 
 ```python
 import json
-from bkash_webhook import BKash
-bkash = BKash(json.loads("bKash Webhook Payload"))
+from bkash_webhook import BkashWebhookListener
+bkash = BkashWebhookListener(json.loads("bKash Webhook Payload"))
 res = bkash.bkash_response_process()
 print(res)
 # You will get bKash Payload if everything is okay. 

@@ -7,6 +7,7 @@ Methods:
     -
 """
 import logging
+import warnings
 
 import requests
 from OpenSSL.crypto import verify, load_certificate, FILETYPE_PEM
@@ -20,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("bkash")
 
 
-class BKash:
+class BkashWebhookListener:
 
     def __init__(self, body: dict, header: str = None):
         self.body = body
@@ -106,3 +107,12 @@ class BKash:
             self.__subscribe_notification()
         elif self.body.get("Type") == "Notification":
             return self.body
+
+
+class BKash(BkashWebhookListener):
+
+    def __init__(self, body: dict, header: str = None):
+        warnings.warn("Call to deprecated class Bkash. Use BkashWebhookListener. "
+                      "Bkash class will completely remove from v1.0.0",
+                      DeprecationWarning, stacklevel=2)
+        BkashWebhookListener.__init__(self, body, header)

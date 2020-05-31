@@ -19,13 +19,13 @@ import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from bkash_webhook import BKash, ValidationError
+from bkash_webhook import BkashWebhookListener, ValidationError
 
 
 class Example(APIView):
     def post(self, request):
         try:
-            bkash = BKash(json.loads(request.body))
+            bkash = BkashWebhookListener(json.loads(request.body))
             response = bkash.bkash_response_process()
             if response is not None:
                 # save your payload
