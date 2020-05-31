@@ -8,7 +8,7 @@ This package will help to receive Webhook notification from bKash end and the us
 
 **Note: Using area - Only Bangladesh** 
 
-**If bKash complains about this package.Such as Logo and others. The author will remove from the package from PyPi and Github.**
+**If bKash complains about this package.Such as Logo and others. The author will remove the package from PyPi and Github.**
 
 ![Coverage](https://raw.githubusercontent.com/vubon/bkash-webhook/master/docs/BKash.svg)
 ## Quickstart

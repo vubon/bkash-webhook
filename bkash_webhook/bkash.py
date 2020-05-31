@@ -2,9 +2,11 @@
 In this module will help to get bKash transactions data via bKash web hook.
 Functionality:
 Methods:
-    - get_cert
-    - signature validation
-    -
+    - get_cert: Get certificate from bKash provide url
+    - content: Create sign able content and make bytes
+    - openssl_verification: Verify the content by certificate
+    - subscribe_notification: Subscribe topic for getting payment notification from bKash end
+    - bkash_response_process: Outer call receiver of this module
 """
 import logging
 import warnings
