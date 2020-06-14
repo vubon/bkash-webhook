@@ -3,7 +3,9 @@
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
 ### Table Of Contents
-
+[Styleguides](#styleguides)
+  * [Git Commit Messages](#git-commit-messages)
+  * [Python Styleguide](#python-styleguide)
 ## Style Guides
 #### Git Commit Messages
 * Use the present tense ("Add feature" not "Added feature")
@@ -28,3 +30,25 @@
     * :shirt: `:shirt:` when removing linter warnings
     
 [N.B. Git Commit Messages instruction adopt from Atom project]
+
+#### Python Styleguide
+All codebase must adhere to [PEP8](https://www.python.org/dev/peps/pep-0008/)
+- Prefer to write well codebase documents 
+- Use Type Casting as much as possible
+- Prefer to follow standard design pattern
+###### Example
+```python
+
+# Use this 
+def add_two(first: int, second: int) -> int:
+    """
+    :param first: Example: 1,2 .... 
+    :param second: Example: 1,2, ....
+    """
+    return first + second
+
+# Instate of  
+def bad_example(first, second):
+    total = first + second
+    return total
+```
